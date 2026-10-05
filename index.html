@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>เครื่องคำนวณ</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>เครื่องคำนวณระยะทาง</h1>
+
+    <p>ความเร็ว (km/h)</p>
+    <input type="number" id="speed">
+
+    <p>เวลา (ชั่วโมง)</p>
+    <input type="number" id="time">
+
+    <br>
+
+    <button onclick="calculate()">คำนวณ</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function calculate() {
+
+    let speed = Number(document.getElementById("speed").value);
+    let time = Number(document.getElementById("time").value);
+
+    let distance = speed * time;
+
+    document.getElementById("result").innerHTML =
+        "ระยะทาง = " + distance + " km";
+
+}
+
+</script>
+
+</body>
+</html>
